@@ -4,6 +4,22 @@
 ![codestyle](https://github.com/PUSSYMIPT/bert-distillation/workflows/CI/badge.svg?branch=master&event=push)
 
 
+## Main repo and feature works
+
+Main repo can be found [here](https://github.com/PUSSYMIPT/bert-distillation).
+
+#### Feature Works
+
+Soon will come catalyst 20.6 update with some core changes and LanguageModelingDataset (which was contributed by me). So the main repo will be updated.
+
+## Post
+
+Also, probably soon, I will publish my post about my project on medium (in pytorch blog). Here is a draft [link](https://medium.com/@nikitabalagansky/bert-distillation-with-catalyst-c6f30c985854). Thanks to Sergey Kolesnikov from catalyst-team for promotion.
+
+Feel free to propose something new for this project.
+
+## Folders
+
 1. `bin` - bash files for running pipelines
 2. `configs` - just place configs here
 3. `docker` - project Docker files for pure reproducibility
@@ -44,6 +60,3 @@ docker run {your container id}
 5. run `catalyst-check-codestyle`
 6. if exit code is not 0 refactor your code
 7. commit!
-
-Also read this at least once
-https://www.notion.so/Engineering-Guidelines-cc80b8268eed43d6a96b12aa8444b4ca
