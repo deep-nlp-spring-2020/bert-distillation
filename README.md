@@ -8,9 +8,27 @@
 
 Main repo can be found [here](https://github.com/PUSSYMIPT/bert-distillation).
 
-#### Feature Works
+## Features
 
-Soon will come catalyst 20.6 update with some core changes and LanguageModelingDataset (which was contributed by me). So the main repo will be updated.
+- distributed training
+- logging with tensorboard, wandb, neptune, alchemy ...
+- fp16
+- various losses and loss agregating
+- initialization with teacher's layers
+
+## Experiment && Results
+
+I initialize my model with \[0,2,4,7,9,11\] encoder layers of teacher model.
+
+I ran my script for 100 hours on 4x1080TI with RuBERT model as a teacher. Logs can be found [here](https://app.wandb.ai/torchwave/bert-distillation). I distil it on Lenta Russian News dataset.
+
+Then I run classification task on mokoron twitter [dataset](http://study.mokoron.com/).
+
+Here are my results:
+
+![Experiment results](https://i.ibb.co/pK6SZD3/newplot-37.png)
+
+My models can 
 
 ## Post
 
@@ -39,24 +57,3 @@ python scripts/split_dataset.py --small
 catalyst-dl run -C configs/config_ru_ranger.yml --verbose --distributed
 ```
 It will take a lot of time. "Let's go get some drinks"
-
-### Docker
-
-I also add dockerfile.
-```
-git clone https://github.com/PUSSYMIPT/bert-distillation.git
-cd bert-distillation
-docker build -f docker/Dockerfile  # yields container id
-docker run {your container id}
-```
-
-
-## Contribution
-
-1. Clone repository
-2. run `pip install -r requirements/requirements-dev.txt -r requirements/requirements.txt`
-3. write some code
-4. run `catalyst-make-codestyle`
-5. run `catalyst-check-codestyle`
-6. if exit code is not 0 refactor your code
-7. commit!
